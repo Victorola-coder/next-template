@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nextapp template.xyz"),
+  metadataBase: new URL("https://nextapptemplate.xyz"),
   icons: {
     icon: "/icon.png",
   },
