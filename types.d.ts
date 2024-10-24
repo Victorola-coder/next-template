@@ -15,3 +15,9 @@ interface SVGProps {
 type Props = {
   show?: boolean;
 };
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  disabled?: boolean;
+  loading?: boolean;
+  noDefault?: boolean;
+}
