@@ -1,17 +1,22 @@
 import "./global.css";
+import { clsx } from "clsx";
 import type { Metadata } from "next";
 import { AOS } from "./components/global";
-import localFont from "next/font/local";
+import { Inter, DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta-sans",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -23,8 +28,7 @@ export const metadata: Metadata = {
   description:
     "I fell in love with next.js, im trying to make a template for it also",
   applicationName: "next Web Application",
-  authors: [{ name: "nextapp template", url: "https://domainname.host" }],
-  keywords: ["NextJs", "reactjs", "template", "typescript"],
+  authors: [{ name: "nextapp template", url: "https://scoota.io" }],
   creator: "VickyJay",
   publisher: "VickyJay",
   generator: "Next.js",
@@ -80,7 +84,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={clsx(
+          "antialiased",
+          inter.variable,
+          dmSans.className,
+          plusJakartaSans.variable
+        )}
       >
         <AOS />
         {children}
