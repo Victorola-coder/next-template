@@ -1,7 +1,7 @@
 import "./global.css";
-import type { Metadata } from "next";
-import { AOS } from "./components/global";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { AOS } from "./components/global";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,6 +13,10 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
+export const viewport: Viewport = {
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nextapptemplate.xyz"),
