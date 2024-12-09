@@ -21,3 +21,9 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
   noDefault?: boolean;
 }
+
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  value?: string;
+  className?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
