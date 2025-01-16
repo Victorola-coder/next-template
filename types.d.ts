@@ -27,3 +27,14 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+type InputProps = {
+  id?: string;
+  error?: string;
+  placeholder?: string;
+  type?: string;
+  multiline?: boolean;
+} & (
+  | React.InputHTMLAttributes<HTMLInputElement>
+  | React.TextareaHTMLAttributes<HTMLTextAreaElement>
+);

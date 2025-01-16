@@ -1,1 +1,9 @@
+export { default as Otp } from "./otp";
+export { default as Tabs } from "./tabs";
+export { default as Input } from "./input";
+export { default as Modal } from "./modal";
+export { default as Image } from "./image";
+export { default as Toggle } from "./toggle";
 export { default as Button } from "./button";
+export { default as Select } from "./select";
+export { default as TextArea } from "./textArea";

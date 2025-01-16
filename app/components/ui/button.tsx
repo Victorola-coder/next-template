@@ -8,6 +8,8 @@ export default function Button(props: ButtonProps) {
     onClick,
     children,
     disabled,
+    size = "default",
+    variant = "default",
     ...prop
   } = props;
 
@@ -17,9 +19,23 @@ export default function Button(props: ButtonProps) {
       disabled={loading || disabled}
       className={clsx(
         !noDefault &&
-          "bg-primary hover:bg-primary-100 active:bg-primary-200 active:shadow-primary transition-all duration-300 active:scale-[0.97] rounded-[10px] px-[21px] py-[12.5px] text-white font-medium text-[18px] leading-normal font-clashMed disabled:cursor-not-allowed disabled:bg-opacity-60",
+          "transition-all duration-300 active:scale-[0.99] px-[21px] py-[10px] font-medium text-[18px] leading-normal font-aloeMed disabled:cursor-not-allowed disabled:bg-opacity-60",
+        {
+          "px-[21px] py-[12.5px] text-[18px]": size === "default",
+          "px-3 py-2 text-sm": size === "sm",
+          "px-6 py-3 text-lg": size === "lg",
+          "bg-gradient-to-r from-[#530CE2] to-[#17A3DA] rounded-[10px]  text-white":
+            variant === "default",
+          "bg-[#FFFFFF] text-black rounded-[16px]": variant === "secondary",
+          "bg-red-500/10 hover:bg-red-500/20 text-red-500":
+            variant === "danger",
+          "bg-[#6B39FF] hover:bg-[#6B39FF]/80 rounded-[12px] active:bg-[#6B39FF]/90 text-white":
+            variant === "primary",
+          "bg-[#283142] rounded-[12px] text-[#FFFFFF]": variant === "google",
+        },
         className
       )}
+      arial-busy={loading?.toString()}
       {...prop}
     >
       <div className="flex items-center justify-center">
