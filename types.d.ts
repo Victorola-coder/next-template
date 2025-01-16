@@ -6,27 +6,14 @@ declare module "*.svg" {
   const content: string;
   export default content;
 }
-
 interface SVGProps {
+  fill?: string;
   className?: string;
   onClick?: () => void;
 }
-
 type Props = {
   show?: boolean;
 };
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  disabled?: boolean;
-  loading?: boolean;
-  noDefault?: boolean;
-}
-
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  value?: string;
-  className?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
 
 type InputProps = {
   id?: string;
@@ -38,3 +25,59 @@ type InputProps = {
   | React.InputHTMLAttributes<HTMLInputElement>
   | React.TextareaHTMLAttributes<HTMLTextAreaElement>
 );
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  disabled?: boolean;
+  loading?: boolean;
+  noDefault?: boolean;
+  size?: "default" | "sm" | "lg";
+  variant?: "primary" | "default" | "secondary" | "danger" | "google";
+}
+
+type ModalProps = {
+  close?: boolean;
+  title?: string;
+  isOpen: boolean;
+  className?: string;
+  onClose: () => void;
+  children: React.ReactNode;
+};
+
+type Option = {
+  label: string;
+  value: string;
+};
+
+type SelectProps = {
+  options: Option[];
+  defaultValue?: string;
+  className?: string;
+  onChange?: (value: string) => void;
+};
+
+type Tab = {
+  label: string;
+  value: string;
+};
+
+type TabsProps = {
+  tabs: Tab[];
+  className?: string;
+  defaultValue?: string;
+  buttonClassName?: string;
+  onChange?: (value: string) => void;
+};
+
+type ToggleProps = {
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+  className?: string;
+};
+
+type TextareaProps = {
+  name: string;
+  value: string;
+  onChange: (e: any) => void;
+  placeholder?: string;
+  className?: string;
+};

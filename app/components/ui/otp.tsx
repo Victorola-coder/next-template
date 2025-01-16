@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { useState, useReducer } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/app/components/ui";
-import { API_URL, API_KEY } from "@/app/constants";
+// import { API_URL, API_KEY } from "@/app/constants";
 import { otpReducer, initialOtpState } from "@/app/lib/otp";
 
 export default function OTP() {
@@ -19,11 +19,10 @@ export default function OTP() {
     try {
       const otpString = Object.values(otpState).join("");
 
-      const response = await fetch(`${API_URL}/auth/verifyOTP`, {
+      const response = await fetch(`endpoint`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": API_KEY,
         },
         body: JSON.stringify({ otp: otpString }),
       });
