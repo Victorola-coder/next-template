@@ -81,3 +81,7 @@ type TextareaProps = {
   placeholder?: string;
   className?: string;
 };
+
+type OTPState = {
+  [key: string]: string;
+};
