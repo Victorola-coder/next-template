@@ -1,8 +1,9 @@
 import "./global.css";
-import type { Metadata, Viewport } from "next";
+import { Toaster } from "sonner";
 import localFont from "next/font/local";
-import { Montserrat } from "next/font/google";
 import { AOS } from "./components/global";
+import { Montserrat } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -93,6 +94,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${montserrat.className} ${geistMono.variable} antialiased`}
       >
+        <Toaster richColors />
         <AOS />
         {children}
       </body>

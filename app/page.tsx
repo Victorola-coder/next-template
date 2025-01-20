@@ -90,7 +90,7 @@ export default function Home() {
             {/* Buttons Section */}
             <Glow className="p-6 space-y-4">
               <h2 className="text-xl font-semibold text-white mb-4">Buttons</h2>
-              <div className="space-y-4">
+              <div className="flex flex-row flex-wrap gap-4">
                 <Button variant="default">Default Button</Button>
                 <Button variant="primary">Primary Button</Button>
                 <Button variant="secondary">Secondary Button</Button>
@@ -296,6 +296,113 @@ export default function Home() {
                 <div className="mt-8">
                   <h3 className="text-white mb-4">OTP Input</h3>
                   <Otp />
+                </div>
+              </div>
+            </Glow>
+
+            {/* Toast Notifications */}
+            <Glow className="p-6 space-y-4">
+              <h2 className="text-xl font-semibold text-white mb-4">
+                Toast Notifications
+              </h2>
+              <div className="grid grid-cols-2 gap-4">
+                <Button
+                  variant="default"
+                  onClick={() => toast.success("Success message")}
+                >
+                  Success Toast
+                </Button>
+                <Button
+                  variant="danger"
+                  onClick={() => toast.error("Error message")}
+                >
+                  Error Toast
+                </Button>
+                <Button
+                  variant="primary"
+                  onClick={() => toast.info("Info message")}
+                >
+                  Info Toast
+                </Button>
+                <Button
+                  variant="secondary"
+                  onClick={() => toast.warning("Warning message")}
+                >
+                  Warning Toast
+                </Button>
+              </div>
+            </Glow>
+
+            {/* Typography */}
+            <Glow className="p-6 space-y-4">
+              <h2 className="text-xl font-semibold text-white mb-4">
+                Typography
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h1 className="text-4xl font-geistSans font-bold text-white">
+                    Heading 1
+                  </h1>
+                  <p className="text-[#FFFFFF80] text-sm">
+                    Font: Geist Sans Bold - 36px
+                  </p>
+                </div>
+                <div>
+                  <h2 className="text-3xl font-geistSans font-semibold text-white">
+                    Heading 2
+                  </h2>
+                  <p className="text-[#FFFFFF80] text-sm">
+                    Font: Geist Sans Semibold - 30px
+                  </p>
+                </div>
+                <div>
+                  <p className="text-base font-geistSans text-white">
+                    Regular paragraph text with Geist Sans
+                  </p>
+                  <p className="text-[#FFFFFF80] text-sm">
+                    Font: Geist Sans Regular - 16px
+                  </p>
+                </div>
+                <div>
+                  <p className="font-geistMono text-white">
+                    Monospace text with Geist Mono
+                  </p>
+                  <p className="text-[#FFFFFF80] text-sm">
+                    Font: Geist Mono - 16px
+                  </p>
+                </div>
+              </div>
+            </Glow>
+
+            {/* Gradients */}
+            <Glow className="p-6 space-y-4">
+              <h2 className="text-xl font-semibold text-white mb-4">
+                Gradients
+              </h2>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <div className="h-20 rounded-lg bg-gradient-to-r from-primary to-[#6366F1]" />
+                  <span className="text-sm text-[#FFFFFF80]">
+                    Primary Gradient
+                  </span>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-20 rounded-lg bg-gradient-to-r from-[#DC2626] to-[#EA580C]" />
+                  <span className="text-sm text-[#FFFFFF80]">
+                    Danger Gradient
+                  </span>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-20 rounded-lg bg-gradient-to-r from-[#283142] to-[#1A202B]" />
+                  <span className="text-sm text-[#FFFFFF80]">
+                    Background Gradient
+                  </span>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-20 rounded-lg bg-gradient-to-r from-[#059669] to-[#10B981]" />
+                  <span className="text-sm text-[#FFFFFF80]">
+                    Success Gradient
+                  </span>
                 </div>
               </div>
             </Glow>
