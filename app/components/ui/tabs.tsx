@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from ".";
 import { useState } from "react";
 
