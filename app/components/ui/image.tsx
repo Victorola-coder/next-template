@@ -19,7 +19,7 @@ export default function OptimizedImage({ src, alt, ...props }: ImageProps) {
         alt={alt}
         quality={75}
         loading="lazy"
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
         className={clsx(
           "duration-700 ease-in-out",
           isLoading ? "scale-110 blur-2xl" : "scale-100 blur-0"
