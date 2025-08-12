@@ -19,6 +19,7 @@ export default function OptimizedImage({ src, alt, ...props }: ImageProps) {
         alt={alt}
         quality={75}
         loading="lazy"
+        draggable={false}
         onLoad={() => setLoading(false)}
         className={clsx(
           "duration-700 ease-in-out",
