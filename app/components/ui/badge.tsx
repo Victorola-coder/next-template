@@ -2,18 +2,6 @@
 
 import { clsx } from "clsx";
 
-export type BadgeVariant = "default" | "primary" | "success" | "warning" | "error" | "info";
-export type BadgeSize = "sm" | "md" | "lg";
-
-export interface BadgeProps {
-  children: React.ReactNode;
-  variant?: BadgeVariant;
-  size?: BadgeSize;
-  dot?: boolean;
-  onRemove?: () => void;
-  className?: string;
-}
-
 const variantStyles = {
   default: "bg-[#283142] text-white border-[#FFFFFF20]",
   primary: "bg-primary/20 text-primary border-primary/30",

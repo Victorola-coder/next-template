@@ -6,17 +6,6 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import { useKeyboard } from "@/app/hooks";
 
-export type AlertVariant = "info" | "success" | "warning" | "error";
-
-export interface AlertProps {
-  variant?: AlertVariant;
-  title?: string;
-  description: string;
-  icon?: React.ReactNode;
-  onClose?: () => void;
-  className?: string;
-}
-
 const variantStyles = {
   info: "bg-blue-500/10 border-blue-500/30 text-blue-400",
   success: "bg-green-500/10 border-green-500/30 text-green-400",
@@ -91,18 +80,6 @@ export function Alert({
 }
 
 // Alert Dialog Component
-export interface AlertDialogProps {
-  open: boolean;
-  onClose: () => void;
-  title: string;
-  description: string;
-  confirmText?: string;
-  cancelText?: string;
-  onConfirm?: () => void;
-  variant?: AlertVariant;
-  loading?: boolean;
-}
-
 export function AlertDialog({
   open,
   onClose,

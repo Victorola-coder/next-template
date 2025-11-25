@@ -3,19 +3,6 @@
 import { clsx } from "clsx";
 import { motion } from "framer-motion";
 
-export type SwitchSize = "sm" | "md" | "lg";
-
-export interface SwitchProps {
-  checked?: boolean;
-  defaultChecked?: boolean;
-  onChange?: (checked: boolean) => void;
-  disabled?: boolean;
-  label?: string;
-  description?: string;
-  size?: SwitchSize;
-  className?: string;
-}
-
 const sizeStyles = {
   sm: {
     track: "w-8 h-4",

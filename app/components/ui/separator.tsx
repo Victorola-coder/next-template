@@ -2,12 +2,6 @@
 
 import { clsx } from "clsx";
 
-export interface SeparatorProps {
-  orientation?: "horizontal" | "vertical";
-  className?: string;
-  decorative?: boolean;
-}
-
 export function Separator({
   orientation = "horizontal",
   className,

@@ -4,18 +4,6 @@ import { clsx } from "clsx";
 import { useId } from "react";
 import { motion } from "framer-motion";
 
-export interface CheckboxProps {
-  checked?: boolean;
-  defaultChecked?: boolean;
-  onChange?: (checked: boolean) => void;
-  disabled?: boolean;
-  label?: string;
-  description?: string;
-  error?: string;
-  className?: string;
-  indeterminate?: boolean;
-}
-
 export function Checkbox({
   checked,
   defaultChecked,

@@ -4,21 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useId } from "react";
 import { clsx } from "clsx";
 
-export interface AccordionItem {
-  id: string;
-  title: string;
-  content: React.ReactNode;
-  disabled?: boolean;
-}
-
-export interface AccordionProps {
-  items: AccordionItem[];
-  type?: "single" | "multiple";
-  defaultValue?: string | string[];
-  className?: string;
-  collapsible?: boolean;
-}
-
 export function Accordion({
   items,
   type = "single",

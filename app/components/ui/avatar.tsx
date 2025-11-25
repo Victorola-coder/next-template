@@ -3,19 +3,6 @@
 import { clsx } from "clsx";
 import { useState } from "react";
 
-export type AvatarSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
-export type AvatarStatus = "online" | "offline" | "away" | "busy";
-
-export interface AvatarProps {
-  src?: string;
-  alt: string;
-  fallback?: string;
-  size?: AvatarSize;
-  status?: AvatarStatus;
-  className?: string;
-  shape?: "circle" | "square";
-}
-
 const sizeStyles = {
   xs: "w-6 h-6 text-xs",
   sm: "w-8 h-8 text-sm",
@@ -104,17 +91,6 @@ export function Avatar({
 }
 
 // Avatar Group Component
-export interface AvatarGroupProps {
-  avatars: Array<{
-    src?: string;
-    alt: string;
-    fallback?: string;
-  }>;
-  max?: number;
-  size?: AvatarSize;
-  className?: string;
-}
-
 export function AvatarGroup({
   avatars,
   max = 5,

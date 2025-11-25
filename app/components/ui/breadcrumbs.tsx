@@ -3,18 +3,6 @@
 import { clsx } from "clsx";
 import Link from "next/link";
 
-export interface BreadcrumbItem {
-  label: string;
-  href?: string;
-  icon?: React.ReactNode;
-}
-
-export interface BreadcrumbsProps {
-  items: BreadcrumbItem[];
-  separator?: React.ReactNode;
-  className?: string;
-}
-
 const defaultSeparator = (
   <svg
     className="w-4 h-4 text-[#FFFFFF40]"

@@ -3,25 +3,6 @@
 import { clsx } from "clsx";
 import { useId } from "react";
 
-export interface RadioOption {
-  value: string;
-  label: string;
-  description?: string;
-  disabled?: boolean;
-}
-
-export interface RadioGroupProps {
-  options: RadioOption[];
-  value?: string;
-  defaultValue?: string;
-  onChange?: (value: string) => void;
-  name?: string;
-  disabled?: boolean;
-  orientation?: "horizontal" | "vertical";
-  className?: string;
-  error?: string;
-}
-
 export function RadioGroup({
   options,
   value,

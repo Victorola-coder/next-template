@@ -85,3 +85,152 @@ type TextareaProps = {
 type OTPState = {
   [key: string]: string;
 };
+
+// ============================================
+// Foundation Components Types
+// ============================================
+
+// Accordion
+interface AccordionItem {
+  id: string;
+  title: string;
+  content: React.ReactNode;
+  disabled?: boolean;
+}
+
+interface AccordionProps {
+  items: AccordionItem[];
+  type?: "single" | "multiple";
+  defaultValue?: string | string[];
+  className?: string;
+  collapsible?: boolean;
+}
+
+// Alert
+type AlertVariant = "info" | "success" | "warning" | "error";
+
+interface AlertProps {
+  variant?: AlertVariant;
+  title?: string;
+  description: string;
+  icon?: React.ReactNode;
+  onClose?: () => void;
+  className?: string;
+}
+
+interface AlertDialogProps {
+  open: boolean;
+  onClose: () => void;
+  title: string;
+  description: string;
+  confirmText?: string;
+  cancelText?: string;
+  onConfirm?: () => void;
+  variant?: AlertVariant;
+  loading?: boolean;
+}
+
+// Avatar
+type AvatarSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+type AvatarStatus = "online" | "offline" | "away" | "busy";
+
+interface AvatarProps {
+  src?: string;
+  alt: string;
+  fallback?: string;
+  size?: AvatarSize;
+  status?: AvatarStatus;
+  className?: string;
+  shape?: "circle" | "square";
+}
+
+interface AvatarGroupProps {
+  avatars: Array<{
+    src?: string;
+    alt: string;
+    fallback?: string;
+  }>;
+  max?: number;
+  size?: AvatarSize;
+  className?: string;
+}
+
+// Badge
+type BadgeVariant = "default" | "primary" | "success" | "warning" | "error" | "info";
+type BadgeSize = "sm" | "md" | "lg";
+
+interface BadgeProps {
+  children: React.ReactNode;
+  variant?: BadgeVariant;
+  size?: BadgeSize;
+  dot?: boolean;
+  onRemove?: () => void;
+  className?: string;
+}
+
+// Breadcrumbs
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+  icon?: React.ReactNode;
+}
+
+interface BreadcrumbsProps {
+  items: BreadcrumbItem[];
+  separator?: React.ReactNode;
+  className?: string;
+}
+
+// Checkbox
+interface CheckboxProps {
+  checked?: boolean;
+  defaultChecked?: boolean;
+  onChange?: (checked: boolean) => void;
+  disabled?: boolean;
+  label?: string;
+  description?: string;
+  error?: string;
+  className?: string;
+  indeterminate?: boolean;
+}
+
+// Radio Group
+interface RadioOption {
+  value: string;
+  label: string;
+  description?: string;
+  disabled?: boolean;
+}
+
+interface RadioGroupProps {
+  options: RadioOption[];
+  value?: string;
+  defaultValue?: string;
+  onChange?: (value: string) => void;
+  name?: string;
+  disabled?: boolean;
+  orientation?: "horizontal" | "vertical";
+  className?: string;
+  error?: string;
+}
+
+// Separator
+interface SeparatorProps {
+  orientation?: "horizontal" | "vertical";
+  className?: string;
+  decorative?: boolean;
+}
+
+// Switch
+type SwitchSize = "sm" | "md" | "lg";
+
+interface SwitchProps {
+  checked?: boolean;
+  defaultChecked?: boolean;
+  onChange?: (checked: boolean) => void;
+  disabled?: boolean;
+  label?: string;
+  description?: string;
+  size?: SwitchSize;
+  className?: string;
+}
