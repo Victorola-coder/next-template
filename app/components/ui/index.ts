@@ -11,7 +11,7 @@ export { default as Select } from "./select";
 export { default as Skeleton } from "./skeleton";
 export { default as TextArea } from "./textArea";
 
-// New foundation components
+// Foundation components (Phase 1)
 export { Accordion } from "./accordion";
 export { Alert, AlertDialog } from "./alert";
 export { Avatar, AvatarGroup } from "./avatar";
@@ -21,3 +21,12 @@ export { Checkbox } from "./checkbox";
 export { RadioGroup } from "./radio-group";
 export { Separator } from "./separator";
 export { Switch } from "./switch";
+
+// Advanced Input components (Phase 2)
+export { Slider } from "./slider";
+export { Rating } from "./rating";
+export { TagInput } from "./tag-input";
+export { Combobox } from "./combobox";
+export { MultiSelect } from "./multi-select";
+export { FileUpload } from "./file-upload";
+export { ColorPicker } from "./color-picker";

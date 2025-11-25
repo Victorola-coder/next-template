@@ -234,3 +234,158 @@ interface SwitchProps {
   size?: SwitchSize;
   className?: string;
 }
+
+// ============================================
+// Advanced Input Components Types
+// ============================================
+
+// Combobox
+interface ComboboxOption {
+  value: string;
+  label: string;
+  disabled?: boolean;
+}
+
+interface ComboboxProps {
+  options: ComboboxOption[];
+  value?: string;
+  defaultValue?: string;
+  onChange?: (value: string) => void;
+  placeholder?: string;
+  searchPlaceholder?: string;
+  emptyMessage?: string;
+  disabled?: boolean;
+  className?: string;
+  error?: string;
+}
+
+// Multi-Select
+interface MultiSelectProps {
+  options: ComboboxOption[];
+  value?: string[];
+  defaultValue?: string[];
+  onChange?: (value: string[]) => void;
+  placeholder?: string;
+  searchPlaceholder?: string;
+  maxSelected?: number;
+  disabled?: boolean;
+  className?: string;
+  error?: string;
+}
+
+// Date Picker
+interface DatePickerProps {
+  value?: Date;
+  defaultValue?: Date;
+  onChange?: (date: Date | undefined) => void;
+  minDate?: Date;
+  maxDate?: Date;
+  disabledDates?: Date[];
+  placeholder?: string;
+  disabled?: boolean;
+  className?: string;
+  error?: string;
+}
+
+// Date Range Picker
+interface DateRangePickerProps {
+  value?: { from: Date | undefined; to: Date | undefined };
+  defaultValue?: { from: Date | undefined; to: Date | undefined };
+  onChange?: (range: { from: Date | undefined; to: Date | undefined }) => void;
+  minDate?: Date;
+  maxDate?: Date;
+  disabledDates?: Date[];
+  placeholder?: string;
+  disabled?: boolean;
+  className?: string;
+  error?: string;
+}
+
+// Time Picker
+interface TimePickerProps {
+  value?: string; // HH:mm format
+  defaultValue?: string;
+  onChange?: (time: string) => void;
+  format?: "12" | "24";
+  step?: number; // minutes
+  disabled?: boolean;
+  className?: string;
+  error?: string;
+}
+
+// Color Picker
+interface ColorPickerProps {
+  value?: string;
+  defaultValue?: string;
+  onChange?: (color: string) => void;
+  format?: "hex" | "rgb" | "hsl";
+  presets?: string[];
+  disabled?: boolean;
+  className?: string;
+  showAlpha?: boolean;
+}
+
+// File Upload
+interface FileUploadFile {
+  file: File;
+  preview?: string;
+  progress?: number;
+  error?: string;
+}
+
+interface FileUploadProps {
+  value?: File[];
+  onChange?: (files: File[]) => void;
+  accept?: string;
+  maxSize?: number; // bytes
+  maxFiles?: number;
+  multiple?: boolean;
+  disabled?: boolean;
+  className?: string;
+  error?: string;
+  onUpload?: (files: File[]) => Promise<void>;
+}
+
+// Tag Input
+interface TagInputProps {
+  value?: string[];
+  defaultValue?: string[];
+  onChange?: (tags: string[]) => void;
+  placeholder?: string;
+  maxTags?: number;
+  allowDuplicates?: boolean;
+  disabled?: boolean;
+  className?: string;
+  error?: string;
+  suggestions?: string[];
+}
+
+// Slider
+interface SliderProps {
+  value?: number | number[];
+  defaultValue?: number | number[];
+  onChange?: (value: number | number[]) => void;
+  min?: number;
+  max?: number;
+  step?: number;
+  disabled?: boolean;
+  className?: string;
+  showValue?: boolean;
+  formatValue?: (value: number) => string;
+}
+
+// Rating
+interface RatingProps {
+  value?: number;
+  defaultValue?: number;
+  onChange?: (value: number) => void;
+  max?: number;
+  precision?: number; // 0.5 for half stars, 1 for full stars
+  disabled?: boolean;
+  readOnly?: boolean;
+  size?: "sm" | "md" | "lg";
+  className?: string;
+  icon?: React.ReactNode;
+  emptyIcon?: React.ReactNode;
+}
+
